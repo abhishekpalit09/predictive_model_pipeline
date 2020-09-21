@@ -164,7 +164,7 @@ class ReduceVIF(BaseEstimator, TransformerMixin):
     @staticmethod
     def calculate_vif(X, thresh=5.0):
         # Taken from https://stats.stackexchange.com/a/253620/53565 and modified
-        # drop_list = []
+        X = X.sample(frac=0.5,random_state=9999)
         dropped=True
         while dropped:
             variables = X.columns
