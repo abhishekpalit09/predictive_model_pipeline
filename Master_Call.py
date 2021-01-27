@@ -138,6 +138,10 @@ for model_name in [Vehicle,Mbike,Health_Premium,Health_Normal]:
     y_train = y_train.to_numpy()
     X_train, y_train = sampler.fit_resample(X_train,y_train)
     print(Counter(y_train))
+     
+    objective(data=model_data,y=model_name,oversampling=oversampling_choice,
+             sampler=sampler,classifier=algo_name,sampling=sampling_mdl_cmp,
+             file=study_param_file,ntrial=n_trial)
 
 
     params = {
