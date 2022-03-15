@@ -456,7 +456,7 @@ class CatBoostClassifierInt(CatBoostClassifier):
 def get_column_names_from_ColumnTransformer(column_transformer):    
     col_name = []
 
-    for transformer_in_columns in column_transformer.transformers_[:-1]: #the last transformer is ColumnTransformer's 'remainder'
+    for transformer_in_columns in column_transformer.transformers_: #the last transformer is ColumnTransformer's 'remainder'
         print('\n\ntransformer: ', transformer_in_columns[0])
         
         raw_col_name = list(transformer_in_columns[2])
